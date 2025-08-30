@@ -6,13 +6,11 @@ import { componentTagger } from 'lovable-tagger';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   //base: '/gptme-webui/',  // Add base URL for GitHub Pages (when served under user/org, not as its own subdomain)
-  server:
-    mode === 'development'
-      ? {
-          host: '::',
-          port: 5701,
-        }
-      : undefined,
+  server: {
+    host: '::',
+    port: 5701,
+    allowedHosts: ['gptme.skogai.se', 'localhost', '.skogai.se'],
+  },
   plugins: [react(), mode === 'development' && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
