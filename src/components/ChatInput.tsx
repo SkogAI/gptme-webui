@@ -281,7 +281,7 @@ export const ChatInput: FC<Props> = ({
       ? 'Connect to gptme to send messages'
       : !hasSession
         ? 'Waiting for chat session to be established...'
-        : 'Send a message...';
+        : "What's on your mind...";
 
   const isDisabled = isReadOnly || !isConnected || !hasSession;
 
